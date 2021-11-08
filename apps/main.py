@@ -4,8 +4,7 @@ from kivy.uix.label import Label
 import requests
 class Main(App):
     def build(self):
-        rq = requests.get("https://random.dog/woof.json").json()
-        text = Label(text=rq["url"])
-        return text
+        rq = requests.get("https://random.dog/woof.json")
+        return Label(text=str(rq.content))
 
 Main().run()
